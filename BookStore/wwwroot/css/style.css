@@ -1,6 +1,41 @@
-﻿html {
+﻿body {
+    background-color: white;
+}
+.navbar {
+    background-color: #2e4553;
+    color: #fff;
+}
+.nav-item {
+    color: #fff;
     
 }
-body {
+.navbar1 {
+    background-color: #2e4553;
+    padding-left: 70%;
+}
 
+.bg-light {
+    background-color: #2e4553 !important;
+    color: #fff !important;
+}
+#white{
+    color: #fff;
+ 
+}
+
+
+.nav-link {
+    color: white;
+}
+
+
+.button-header {
+    border: 1px solid #fff;
+    background-color: #2e4553;
+    width: 110%;
+    transition: 0.3s ease all;
+}
+.button-header:hover {
+    background-color: #fff;
+    color: #2e4553;
 }
