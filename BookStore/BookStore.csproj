@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Index.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Blog.razor" />
+    <Content Remove="Pages\Catalog.razor" />
+    <Content Remove="Pages\Component.razor" />
+    <Content Remove="Pages\Discounts.razor" />
+    <Content Remove="Pages\Index - Копировать.razor" />
+    <Content Remove="Pages\Index.cshtml" />
+    <Content Remove="wwwroot\Component.razor" />
     <Content Remove="wwwroot\css\StyleSheet.css" />
   </ItemGroup>
 

@@ -11,7 +11,7 @@
 }
 .navbar1 {
     background-color: #2e4553;
-    padding-left: 70%;
+    padding-left: 60%;
 }
 
 .bg-light {
@@ -39,3 +39,25 @@
     background-color: #fff;
     color: #2e4553;
 }
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.container {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+}
+
+
