@@ -9,10 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\Blog.razor" />
-    <Content Remove="Pages\Catalog.razor" />
     <Content Remove="Pages\Component.razor" />
-    <Content Remove="Pages\Discounts.razor" />
     <Content Remove="Pages\Index - Копировать.razor" />
     <Content Remove="Pages\Index.cshtml" />
     <Content Remove="wwwroot\Component.razor" />
@@ -22,7 +19,24 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.4" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Modal\" />
   </ItemGroup>
 
 </Project>
