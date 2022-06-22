@@ -1,4 +1,6 @@
+using BookStore.Models;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -18,6 +20,10 @@ namespace BookStore
             builder.RootComponents.Add<App>("#app");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddDbContext<BookStoreContext>(
+                options =>
+                        options.UseSqlServer("Server=LAB4-09;Database=BookStore;Trusted_Connection=True;")
+                        );
 
             await builder.Build().RunAsync();
         }
