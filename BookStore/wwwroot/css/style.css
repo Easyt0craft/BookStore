@@ -115,6 +115,11 @@ h1, h2, h3, h4, h5, h6 {
         font-size: .875rem;
     }
 
+    .card {
+        color: #000;
+       text-align: center;
+    }
+
 .card-img-right {
     height: 100%;
     border-radius: 0 3px 3px 0;
@@ -176,5 +181,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 
 
+.queue>*
+{flex:0 0 auto;
+ margin: 120px;
+ padding: 10px;
+ width:17.3333333333%}
+.bg-light1 {
+    color:#000;
+    background-color: #fff;
+}
 
 

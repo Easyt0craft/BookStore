@@ -1,0 +1,38 @@
+﻿@page "/Kniga/{id:int}"
+@using BookStore.Models
+@using System.Linq
+@using Microsoft.EntityFrameworkCore;
+@inject BookStoreContext DB
+@if (CurrentBook != null)
+{
+
+<div class="row row-cols-1 queue g-4">
+    <div class="col">
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <img src="@($"images/Book{CurrentBook.Id}.png")" class="card-img-top" alt="Обложка">
+            <div class="card-body">
+                <h5 class="card-title">@CurrentBook.Name</h5>
+                <p class="card-text">Описание книги</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">@CurrentBook.Price</small>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+
+@code {
+        [Parameter]
+        public int Id { get; set; }
+    public Models.Book CurrentBook = new();
+    protected override async Task OnInitializedAsync()
+    {
+        CurrentBook = DB.Books.FirstOrDefault(c => c.Id == Id);
+    }
+}
+
+
