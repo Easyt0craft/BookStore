@@ -1,0 +1,40 @@
+﻿@page "/Clients"
+@using BookStore.Models
+@using System.Linq
+@using Microsoft.EntityFrameworkCore;
+@inject BookStoreContext DB
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach (var client in Clients)
+            {
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img class="bd-placeholder-img card-img-top" src=@($"images/Client{client.Id}.png") aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" />
+
+                        <div class="card-body">
+                            <p class="card-text"><b><font size="4">@client.FullName</font></b> </p>
+                            <p class="card-text">@client.Phone</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">Bruh</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+@code {
+    List<Models.Client> Clients = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Clients = DB.Clients.ToList();
+
+    }
+
+} 

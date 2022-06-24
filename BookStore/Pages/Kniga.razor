@@ -13,8 +13,11 @@
         <div class="card h-100">
             <img src="@($"images/Book{CurrentBook.Id}.png")" class="card-img-top" alt="Обложка">
             <div class="card-body">
-                <h5 class="card-title">@CurrentBook.Name</h5>
-                <p class="card-text">Описание книги</p>
+                <h4 class="card-title"><b>@CurrentBook.Name</b></h4>
+                <p class="card-text">@CurrentBook.Genre.Name</p>
+                <p class="card-text">@CurrentBook.Author.FullName</p>
+                <p class="card-text">@CurrentBook.Publisher.Name</p>
+
             </div>
             <div class="card-footer">
                 <small class="text-muted">@CurrentBook.Price</small>
@@ -26,12 +29,12 @@
 
 
 @code {
-        [Parameter]
-        public int Id { get; set; }
+    [Parameter]
+    public int Id { get; set; }
     public Models.Book CurrentBook = new();
     protected override async Task OnInitializedAsync()
     {
-        CurrentBook = DB.Books.FirstOrDefault(c => c.Id == Id);
+        CurrentBook = DB.Books.Include(c=>c.Genre).Include(c => c.Author).Include(c => c.Publisher).FirstOrDefault(c => c.Id == Id);
     }
 }
 
